@@ -1,0 +1,88 @@
+﻿<Window x:Class="ToolUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToolUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <DockPanel>
+        <StatusBar DockPanel.Dock="Bottom" FontSize="16">
+            <StatusBar.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </StatusBar.ItemsPanel>
+            <StatusBarItem>
+                <Label Name="SuccessCountLabel" Content="成功:0">
+                    <Label.Foreground>
+                        <SolidColorBrush Color="#FF01E510" />
+                    </Label.Foreground>
+                </Label>
+            </StatusBarItem>
+            <Separator Grid.Column="1" />
+            <StatusBarItem Grid.Column="2">
+                <Label Name="FailCountLabel" Content="失败:0" Foreground="Red">
+                    <Label.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop />
+                            <GradientStop Offset="1" />
+                            <GradientStop Offset="0.485" />
+                        </LinearGradientBrush>
+                    </Label.Background>
+                </Label>
+            </StatusBarItem>
+            <Separator Grid.Column="3" />
+            <StatusBarItem Grid.Column="4" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                <ProgressBar Value="0" Name="ProgressBar" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
+            </StatusBarItem>
+        </StatusBar>
+        <DockPanel DockPanel.Dock="Top">
+            <StackPanel DockPanel.Dock="Top">
+                <ToolBar DockPanel.Dock="Top" VerticalAlignment="Top">
+                    <Button Content="导入用户列表" Name="ImportUserListButton" Click="ImportUserListButton_OnClick" FontSize="16"/>
+
+                </ToolBar>
+                <Label Content="已加载: 0个账号" Name="LoadedUserLabel" FontSize="16" />
+                <DockPanel>
+                    <GroupBox Header="期数选择" FontSize="16" HorizontalAlignment="Left">
+                        <DockPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <RadioButton Content="最新一期" VerticalAlignment="Center" HorizontalAlignment="Center" IsChecked="True" Checked="LatestSessionCheck_OnChecked" Name="LatestSessionCheck"/>
+                                <RadioButton Content="自定义" VerticalAlignment="Center" HorizontalAlignment="Center" Checked="RadioButton_Checked" Name="CustomSessionCheck"/>
+                                <local:NumbericTextBox MinWidth="50"  Text="" HorizontalContentAlignment="Stretch" x:Name="CustomSessionId" Opacity="0" IsEnabled="False"
+                                                   VerticalContentAlignment="Stretch" HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center" InputScope="Number" />
+                            </StackPanel>
+
+                            
+                        </DockPanel>
+                    </GroupBox>
+                    <DockPanel HorizontalAlignment="Right" >
+                        <Button Content="开始学习" HorizontalContentAlignment="Center" Name="StartButton" Click="StartButton_OnClick" HorizontalAlignment="Right" MinWidth="78" />
+                        <Label/>
+                        <Button Content="停止学习" HorizontalContentAlignment="Center" Name="EndButton" Click="EndButton_OnClick" IsEnabled="False" HorizontalAlignment="Right" MinWidth="78" />
+                    </DockPanel>
+                </DockPanel>
+            </StackPanel>
+
+            <GroupBox DockPanel.Dock="Top" Header="日志">
+                <TextBox IsReadOnly="True" AllowDrop="False" AcceptsReturn="True" x:Name="logBox"
+                         ScrollViewer.CanContentScroll="True" VerticalScrollBarVisibility="Auto"
+                         HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Auto"
+                         HorizontalAlignment="Stretch" />
+            </GroupBox>
+
+        </DockPanel>
+    </DockPanel>
+
+
+</Window>

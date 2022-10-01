@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XHRTools", "XHRTools.csproj", "{3085D513-3B06-4156-BE83-69963F0D67FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolUI", "ToolUI\ToolUI.csproj", "{D0D73D2B-8813-45B4-9583-4A75FA803DD3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3085D513-3B06-4156-BE83-69963F0D67FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3085D513-3B06-4156-BE83-69963F0D67FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3085D513-3B06-4156-BE83-69963F0D67FF}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{3085D513-3B06-4156-BE83-69963F0D67FF}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{D0D73D2B-8813-45B4-9583-4A75FA803DD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0D73D2B-8813-45B4-9583-4A75FA803DD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0D73D2B-8813-45B4-9583-4A75FA803DD3}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{D0D73D2B-8813-45B4-9583-4A75FA803DD3}.Debug|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
